@@ -1,6 +1,14 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
+import emptyImage from './assets/images/empty.png';
+import penGreyImage from './assets/images/pen-grey.png';
+import penPurpleImage from './assets/images/pen-purple.png';
+import trashGreyImage from './assets/images/trash-grey.png';
+import trashRedImage from './assets/images/trash-red.png';
+
+
+
 function App() {
   const [todos, setTodos] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
@@ -162,7 +170,7 @@ function App() {
       <main className="main-content">
         {filteredTodos.length === 0 ? (
           <div className="empty-state">
-            <img src="/empty.png" alt="Empty state" className="empty-illustration" />
+            <img src={emptyImage} alt="Empty state" className="empty-illustration" />
             <p className="empty-text">Empty...</p>
           </div>
         ) : (
@@ -184,16 +192,16 @@ function App() {
                     onClick={() => openEditModal(todo)}
                     aria-label="Edit todo"
                   >
-                    <img src="/pen-grey.png" alt="Edit" className="action-icon edit-icon-default" />
-                    <img src="/pen-purple.png" alt="Edit" className="action-icon edit-icon-hover" />
+                    <img src={penGreyImage} alt="Edit" className="action-icon edit-icon-default" />
+                    <img src={penPurpleImage} alt="Edit" className="action-icon edit-icon-hover" />
                   </button>
                   <button 
                     className="action-button delete-button"
                     onClick={() => deleteTodo(todo.id)}
                     aria-label="Delete todo"
                   >
-                    <img src="/trash-grey.png" alt="Delete" className="action-icon delete-icon-default" />
-                    <img src="/trash-red.png" alt="Delete" className="action-icon delete-icon-hover" />
+                    <img src={trashGreyImage} alt="Delete" className="action-icon delete-icon-default" />
+                    <img src={trashRedImage} alt="Delete" className="action-icon delete-icon-hover" />
                   </button>
       </div>
               </li>
